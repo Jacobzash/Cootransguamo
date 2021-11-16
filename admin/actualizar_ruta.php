@@ -1,0 +1,70 @@
+<?php
+session_start();
+include("conexion.php");
+
+if(isset($_SESSION['usuario']))
+  {
+   $temp=$_SESSION['usuario'];
+        if ($temp[0]==1) {
+        }
+        else
+        {
+           header("Location: ../index.php?Error=Acceso_denegado");     
+        }   
+  }
+  else
+  {
+     header("Location: ../index.php?Error=Acceso_denegado");
+  }
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cootransguamo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  	<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="../estilo.css">
+    <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.css">
+	<script src="../js/jquery-1.11.3.min.js" type="text/javascript"></script>
+  
+</head>
+<body>
+
+  <br />
+    <center>
+      <form action="datos_ruta.php" method="post">
+        
+        <table style="width: 50%"  class="table table-condensed table-hover">
+          <tr>
+            <td colspan="2" align="center" style="background-color: #f0b650; color: #fff"><h3>Actualizar Ruta</h3></td>
+          </tr>
+          <tr>
+            <td align="left" style="width: 30%"><h4>Nombre de la Ruta</h4></td>
+            <td style="width: 20%"><input class="form-control" type="text" name="nombre_ruta" style="width:250px; height:30px" required /></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><button type="submit" name="datos" class="btn btn-success btn-sm">Buscar</button></td>
+          </tr>
+        </table>
+      </form>
+    </center> 
+           <br /><br />
+
+
+
+
+
+
+<!--Fin del tercer contenedor-->
+  <script src="../js/jquery-1.11.3.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+
+  
+
+
+</body>
+</html>
+	
